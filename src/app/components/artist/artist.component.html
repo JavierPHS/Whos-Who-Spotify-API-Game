@@ -1,0 +1,11 @@
+
+<div class="artist-card">
+    <img src="{{artistImg}}" class="artist-img">
+    <button 
+    id="artistButton" 
+    (click)="handleChoice()" 
+    class="artist-name"
+    [disabled]="gameOver"
+    >
+    {{ artistName }}</button>
+</div>

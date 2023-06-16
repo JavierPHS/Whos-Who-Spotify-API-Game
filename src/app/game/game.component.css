@@ -1,0 +1,65 @@
+.config-title{
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.header{
+  text-align: center;
+  font-weight: 800;
+  font-size: 50px;
+  margin: 2rem;
+}
+
+.strong{
+text-decoration: underline;
+}
+
+.play-button{
+  margin: 1rem;
+  background-color: #191414;
+  border: 3px solid #191414;
+  color: #FFF;
+  padding: .5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settings-button{
+  margin: 1rem;
+  border: 2px solid black;
+  background-color: #191414;
+  color: #FFF;
+  padding: .5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.status-text{
+  text-align: center;
+  color: #FFF;
+  font-size: 50px;
+}
+
+.artist-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#result{
+  text-align: center;
+  margin: 0rem;
+}
+
+.track-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -1,0 +1,33 @@
+<div class="header">Who's Who?</div>
+
+<div *ngIf="authLoading || configLoading">Loading...</div>
+<div *ngIf="!authLoading && !configLoading" class="config-container">
+  <h3>Genre:</h3>
+  <select [(ngModel)]="selectedGenre" (ngModelChange)="setGenre($event)" class="config-select">
+    <option [value]=""></option>
+    <option [value]="genre" *ngFor="let genre of genres">
+      {{ genre }}
+    </option>
+  </select>
+  <br>
+  <h3>Number of Artists:</h3>
+  <select [(ngModel)]="selectedNumberOfArtists" (ngModelChange)="setNumberOfArtists($event)" class="config-select">
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <br>
+  <h3>Number of Songs:</h3>
+  <select [(ngModel)]="selectedNumberOfSongs" (ngModelChange)="setNumberOfSongs($event)" class="config-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <br>
+</div>
+
+  <div class="button-container">
+  <button *ngIf="selectedGenre" [routerLink]="['/game']" [queryParams]="{ genre: selectedGenre, numSongs: selectedNumberOfSongs, numArtists: selectedNumberOfArtists }" class="play-button">Start Game</button>
+</div>
+
+

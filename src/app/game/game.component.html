@@ -1,0 +1,23 @@
+<div class="header">Guess The Artist!</div>
+<div class="config-title">Selected Genre: <strong class="strong"> {{ selectedGenre }} </strong> </div>
+<div *ngIf="songLoading" class="status-text">Loading...</div>
+
+<div class="track-container">
+<app-track *ngIf="track" [track]="track"></app-track>
+<app-track *ngIf="track && selectedSongs >= 2" [track]="trackList[1]"></app-track>
+<app-track *ngIf="track && selectedSongs >= 3" [track]="trackList[2]"></app-track>
+</div>
+
+<div class="artist-container">
+<app-artist *ngIf="track" [track]="artistChoices[0]" [correctArtistTrack]="track" [artistImg]="imageList[0]" (artistChoice)="handleChoice($event)" [gameOver]="gameOver" ></app-artist>
+<app-artist *ngIf="track" [track]="artistChoices[1]" [correctArtistTrack]="track" [artistImg]="imageList[1]"(artistChoice)="handleChoice($event)" [gameOver]="gameOver" ></app-artist>
+<app-artist *ngIf="track && selectedArtists >= 3" [track]="artistChoices[2]" [correctArtistTrack]="track" [artistImg]="imageList[2]" (artistChoice)="handleChoice($event)" [gameOver]="gameOver" ></app-artist>
+<app-artist *ngIf="track && selectedArtists >= 4" [track]="artistChoices[3]" [correctArtistTrack]="track" [artistImg]="imageList[3]" (artistChoice)="handleChoice($event)" [gameOver]="gameOver" ></app-artist>
+</div>
+
+<h1 id="result">{{ incorrectGuesses >= selectedArtists - 1 ? 'You Lose' : '' }}</h1>
+
+<div class="button-container">
+  <button class="play-button" (click)="reloadPage()">Play Again</button>
+  <button class="settings-button" [routerLink]="['/']">Settings</button>
+</div>
